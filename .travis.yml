@@ -1,6 +1,8 @@
 dist: trusty
 sudo: required
-
+arch:
+    - amd64
+    - arm64
 install:
   - docker run --name buildkit --rm -d --privileged -p 1234:1234 $REPO_SLUG_ORIGIN --addr tcp://0.0.0.0:1234
   - sudo docker cp buildkit:/usr/bin/buildctl /usr/bin/
